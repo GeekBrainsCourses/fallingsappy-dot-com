@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Личный сайт Fallingsappy</title>
+	<link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+        var answer = parseInt(Math.random() * 100);
+
+
+        function readInt(){
+          var number = document.getElementById("userAnswer").value;
+          return parseInt(number);
+          // return +document.getElementById("userAnswer").value;
+        }
+        
+        function readInt1(){
+          var number1 = document.getElementById("userAnswer1").value;
+          return parseInt(number1);
+          // return +document.getElementById("userAnswer").value;
+        }
+
+        function write(text){
+          document.getElementById("info").innerHTML = text;
+        }
+
+        function write1(text1){
+          document.getElementById("info1").innerHTML = text1;
+        }
+
+        function hide(id){
+          document.getElementById(id).style.display = "none";
+        }
+
+        function guess(){
+
+
+          var userAnswer = readInt();
+          if(userAnswer == answer){
+            write("<b>Поздравляю, первый игрок, вы победили!</b>");
+            hide("button");
+            hide("userAnswer");
+            hide("button1");
+            hide("userAnswer1");
+            hide("info1");
+          } else if(userAnswer > answer){
+            write("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 0 до 100");
+          } else if(userAnswer < answer){
+            write("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 0 до 100");       
+          }
+        } 
+        
+        function guess1(){
+
+
+          var userAnswer1 = readInt1();
+          if(userAnswer1 == answer){
+            write1("<b>Поздравляю, второй игрок, вы победили!</b>");
+            hide("button1");
+            hide("userAnswer1");
+            hide("button");
+            hide("userAnswer");
+            hide("info");
+          } else if(userAnswer1 > answer){
+            write1("Вы ввели слишком большое число<br>Попробуйте еще раз. Введите число от 0 до 100");
+          } else if(userAnswer1 < answer){
+            write1("Вы ввели слишком маленькое число<br>Попробуйте еще раз. Введите число от 0 до 100");       
+          }
+        }  
+
+    </script>
+</head>
+<body>
+
+<h1>Угадайка. Два игрока</h1>
+<nav id="primary_nav_wrap">
+<ul>
+  <li class="current-menu-item"><a href="index.html">Главная</a></li>
+  <li><a href="#">Игры</a>
+    <ul>
+      <li><a href="riddles.html">Загадки</a></li>
+      <li><a href="#">Угадайка</a>
+        <ul>
+          <li><a href="guess.html">Угадайка. 1 игрок.</a></li>
+          <li><a href="guess2players.html">Угадайка. 2 игрока.</a></li>  
+        </ul> 
+      </li>    
+    </ul>
+  </li>
+  <li><a href="passwordgen.html">Генератор паролей</a></li>    
+</ul>
+</nav>
+
+<br>
+<br>
+<br>
+<div class="content">
+    <div class="contentWrap">
+        <div class="center">
+
+            <div class="box">
+
+        <p id="info">Угадайте число от 0 до 100</p>
+        <input type="text" id="userAnswer">
+        <br>
+        <a href="#" onClick="guess();" id="button">Начать</a> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="info1">Угадайте число от 0 до 100</p>
+        <input type="text1" id="userAnswer1">
+        <br>
+        <a href="#" onClick="guess1();" id="button1">Начать</a>         
+
+            </div>
+
+        </div>
+    </div>            
+</div>
+<div class="footer">		
+Copyright &copy; Fallingsappy
+</html>
+	
